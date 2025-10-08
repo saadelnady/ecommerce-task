@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Dubisign Banner](https://drive.google.com/file/d/1sN2xUiqudujbXnVlff6eMjkId1tEpaov/view?usp=sharing)
+![Project Screenshot](https://drive.google.com/uc?export=view&id=1sN2xUiqudujbXnVlff6eMjkId1tEpaov)
 
 **A modern, blazing-fast e-commerce experience built with cutting-edge technology**
 
