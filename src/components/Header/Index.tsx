@@ -5,6 +5,7 @@ import { removeFromCart, updateQty, clearCart } from "@/store/cart/actions";
 import IcCart from "./assets/svg/ic-cart.svg";
 import IcClose from "./assets/svg/ic-close.svg";
 import toast from "react-hot-toast";
+import { RootState } from "@/store/reducers";
 
 const Header = () => {
   const dispatch = useDispatch();

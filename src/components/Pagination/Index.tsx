@@ -14,13 +14,11 @@ const Pagination: React.FC<PaginationProps> = ({
   const getVisiblePages = (): (number | string)[] => {
     const pages: (number | string)[] = [];
 
-    // Always show first page
     if (currentPage > 3) {
       pages.push(1);
       if (currentPage > 4) pages.push("...");
     }
 
-    // Nearby pages
     for (
       let i = Math.max(1, currentPage - 2);
       i <= Math.min(totalPages, currentPage + 2);
@@ -29,7 +27,6 @@ const Pagination: React.FC<PaginationProps> = ({
       pages.push(i);
     }
 
-    // Always show last page
     if (currentPage < totalPages - 2) {
       if (currentPage < totalPages - 3) pages.push("...");
       pages.push(totalPages);
@@ -48,7 +45,6 @@ const Pagination: React.FC<PaginationProps> = ({
 
   return (
     <div className="flex justify-center items-center mt-6 flex-wrap gap-2 text-sm">
-      {/* Prev Button */}
       <button
         onClick={() => handlePageClick(currentPage - 1)}
         disabled={currentPage === 1}
@@ -57,7 +53,6 @@ const Pagination: React.FC<PaginationProps> = ({
         ← Prev
       </button>
 
-      {/* Page Numbers */}
       {visiblePages.map((page, index) =>
         page === "..." ? (
           <span
@@ -69,7 +64,8 @@ const Pagination: React.FC<PaginationProps> = ({
         ) : (
           <button
             key={`page-${page}`}
-            onClick={() => handlePageClick(page)}
+            onClick={() => typeof page === "number" && handlePageClick(page)}
+            aria-current={currentPage === page ? "page" : undefined}
             className={`px-3 py-1 border rounded transition ${
               currentPage === page
                 ? "bg-blue-600 text-white border-blue-600"
@@ -81,7 +77,6 @@ const Pagination: React.FC<PaginationProps> = ({
         )
       )}
 
-      {/* Next Button */}
       <button
         onClick={() => handlePageClick(currentPage + 1)}
         disabled={currentPage === totalPages}

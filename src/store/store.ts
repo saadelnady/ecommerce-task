@@ -1,9 +1,22 @@
-import { createStore } from "redux";
+import { compose, createStore } from "redux";
 import { rootReducer } from "./reducers";
 
-const devtools =
-  typeof window !== "undefined" &&
-  window.__REDUX_DEVTOOLS_EXTENSION__ &&
-  window.__REDUX_DEVTOOLS_EXTENSION__();
+declare global {
+  interface Window {
+    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
+  }
+}
 
-export const store = createStore(rootReducer, devtools);
+let composeEnhancers = compose;
+
+if (
+  typeof window !== "undefined" &&
+  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+) {
+  composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
+}
+
+export const store = createStore(rootReducer, undefined, composeEnhancers());
+
+export type AppDispatch = typeof store.dispatch;
+export default store;

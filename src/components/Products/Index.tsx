@@ -8,7 +8,7 @@ import products from "@/data/data";
 import { Product } from "@/types/types";
 import { addToCart } from "@/store/cart/actions";
 import { Range, getTrackBackground } from "react-range";
-import Pagination from "@/components/Pagination";
+import Pagination from "@/components/Pagination/Index";
 import toast from "react-hot-toast";
 
 const Products = () => {

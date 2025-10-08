@@ -4,6 +4,7 @@ import {
   UPDATE_QTY,
   CLEAR_CART,
 } from "./actionTypes";
+
 import { Product } from "@/types/types";
 
 export interface CartItem {
@@ -17,7 +18,6 @@ interface CartState {
 
 const cartStorageKey = "myshop_cart_v1";
 
-// قراءة السلة من localStorage عند البداية
 const initialState: CartState = {
   items:
     typeof window !== "undefined"
@@ -25,7 +25,35 @@ const initialState: CartState = {
       : [],
 };
 
-export const cartReducer = (state = initialState, action: any): CartState => {
+interface AddToCartAction {
+  type: typeof ADD_TO_CART;
+  payload: Product;
+}
+
+interface RemoveFromCartAction {
+  type: typeof REMOVE_FROM_CART;
+  payload: string | number;
+}
+
+interface UpdateQtyAction {
+  type: typeof UPDATE_QTY;
+  payload: { id: string | number; qty: number };
+}
+
+interface ClearCartAction {
+  type: typeof CLEAR_CART;
+}
+
+type CartAction =
+  | AddToCartAction
+  | RemoveFromCartAction
+  | UpdateQtyAction
+  | ClearCartAction;
+
+export const cartReducer = (
+  state = initialState,
+  action: CartAction
+): CartState => {
   let newState: CartState;
 
   switch (action.type) {
@@ -73,7 +101,6 @@ export const cartReducer = (state = initialState, action: any): CartState => {
       return state;
   }
 
-  // حفظ أي تغيير في localStorage
   if (typeof window !== "undefined") {
     localStorage.setItem(cartStorageKey, JSON.stringify(newState.items));
   }

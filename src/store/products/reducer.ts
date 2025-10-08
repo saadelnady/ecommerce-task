@@ -1,9 +1,16 @@
 import { SET_PRODUCTS } from "./actionTypes";
-import { Product } from "@types/product";
+import { Product } from "@/types/types";
 
 interface ProductState {
   products: Product[];
 }
+
+interface SetProductsAction {
+  type: typeof SET_PRODUCTS;
+  payload: Product[];
+}
+
+type ProductAction = SetProductsAction;
 
 const initialState: ProductState = {
   products: [],
@@ -11,7 +18,7 @@ const initialState: ProductState = {
 
 export const productsReducer = (
   state = initialState,
-  action: any
+  action: ProductAction
 ): ProductState => {
   switch (action.type) {
     case SET_PRODUCTS:
