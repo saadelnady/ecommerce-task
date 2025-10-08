@@ -1,20 +1,10 @@
+import { CartState, Product } from "@/types/interfaces";
 import {
   ADD_TO_CART,
   REMOVE_FROM_CART,
   UPDATE_QTY,
   CLEAR_CART,
 } from "./actionTypes";
-
-import { Product } from "@/types/types";
-
-export interface CartItem {
-  product: Product;
-  qty: number;
-}
-
-interface CartState {
-  items: CartItem[];
-}
 
 const cartStorageKey = "myshop_cart_v1";
 

@@ -1,4 +1,4 @@
-import { Product } from "@/types/types";
+import { Product } from "@/types/interfaces";
 
 import img1 from "./assets/imgs/1.png";
 import img2 from "./assets/imgs/2.png";

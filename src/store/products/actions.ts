@@ -1,6 +1,6 @@
 import products from "@/data/data";
 import { SET_PRODUCTS } from "./actionTypes";
-import { Product } from "@/types/types";
+import { Product } from "@/types/interfaces";
 
 export const loadProducts = () => {
   return {

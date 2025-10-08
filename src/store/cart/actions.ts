@@ -1,4 +1,4 @@
-import { Product } from "@/types/types";
+import { Product } from "@/types/interfaces";
 import {
   ADD_TO_CART,
   CLEAR_CART,

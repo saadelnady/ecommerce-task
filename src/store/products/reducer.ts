@@ -1,6 +1,6 @@
 import { SET_PRODUCTS } from "./actionTypes";
-import { Product } from "@/types/types";
-
+import { Product } from "@/types/interfaces";
+import products from "@/data/data";
 interface ProductState {
   products: Product[];
 }
@@ -13,7 +13,7 @@ interface SetProductsAction {
 type ProductAction = SetProductsAction;
 
 const initialState: ProductState = {
-  products: [],
+  products,
 };
 
 export const productsReducer = (

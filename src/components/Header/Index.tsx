@@ -117,7 +117,7 @@ const Header = () => {
                               {
                                 duration: 2000,
                                 style: {
-                                  background: "#f87171", // أحمر فاتح لإشارة الحذف
+                                  background: "#f87171",
                                   color: "#fff",
                                   fontWeight: 500,
                                 },
@@ -160,14 +160,6 @@ const Header = () => {
                               className="px-2 py-1 border rounded"
                             >
                               +
-                            </button>
-                            <button
-                              onClick={() =>
-                                dispatch(removeFromCart(item.product.id))
-                              }
-                              className="ml-2 text-red-500 text-xs"
-                            >
-                              Remove
                             </button>
                           </div>
                         </div>
