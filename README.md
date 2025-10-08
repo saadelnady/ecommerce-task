@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Dubisign Banner](https://via.placeholder.com/800x200/3B82F6/FFFFFF?text=Dubisign+Ecommerce+🚀)
+![Dubisign Banner](https://drive.google.com/file/d/1sN2xUiqudujbXnVlff6eMjkId1tEpaov/view?usp=sharing)
 
 **A modern, blazing-fast e-commerce experience built with cutting-edge technology**
 
