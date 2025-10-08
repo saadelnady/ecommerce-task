@@ -37,7 +37,7 @@ const Header = () => {
     } else {
       dispatch(updateQty(productId, qty));
       toast(`Updated quantity to ${qty}`, {
-        duration: 1500,
+        duration: 2000,
         style: {
           background: "#6e591a",
           color: "#fff",
@@ -67,9 +67,9 @@ const Header = () => {
   if (!isMounted) return null;
 
   return (
-    <header className="mb-6 py-2 sticky top-0 z-50 bg-white ">
+    <header className="mb-6 py-2 sticky top-0 z-50 bg-white  px-5 ">
       <div className="max-w-6xl mx-auto flex items-center justify-between ">
-        <h1 className="text-2xl md:text-3xl font-bold">My Shop</h1>
+        <h1 className="text-2xl md:text-3xl font-bold ">My Shop</h1>
 
         <div className="flex items-center gap-4">
           <div className="relative">

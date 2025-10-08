@@ -22,7 +22,7 @@ const Filters = ({
   };
 
   return (
-    <aside className="md:col-span-1 bg-white p-4 rounded-lg shadow-sm min-h-[100vh]">
+    <aside className="md:col-span-1 bg-white p-4 rounded-lg shadow-sm sm:h-fit md:h-[100vh]">
       <div className="mb-4">
         <label className="block text-sm font-medium mb-1" htmlFor="search">
           Search
